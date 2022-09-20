@@ -124,7 +124,6 @@
           31,
           32,
           36,
-          37,
           44,
           46,
           47
@@ -463,7 +462,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "out/3D/MateLightPowerSupplyPcb.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

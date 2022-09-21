@@ -465,7 +465,7 @@
       "step": "out/3D/MateLightPowerSupplyPcb.step",
       "vrml": ""
     },
-    "page_layout_descr_file": ""
+    "page_layout_descr_file": "pages/CleanPage.kicad_wks"
   },
   "schematic": {
     "annotate_start_num": 0,

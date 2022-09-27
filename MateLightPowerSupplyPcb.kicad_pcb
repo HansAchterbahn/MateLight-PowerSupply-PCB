@@ -4,7 +4,7 @@
     (thickness 1.6)
   )
 
-  (paper "User" 99.9998 99.9998)
+  (paper "User" 77.0128 29.9974)
   (title_block
     (title "MateLightPowerSupplyPcb")
     (date "2022-09-21")

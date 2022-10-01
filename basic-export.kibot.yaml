@@ -557,18 +557,21 @@ outputs:
 ################################################################################
 
 # Generate QR-Code
-- name: basic_qr_lib_example
-  comment: QR code symbol and footprint example
+- name: basic_qr_lib
+  comment: QR code symbol and footprint
   type: qr_lib
   dir: kibot/qr_libs
   options:
     qrs:
-    - correction_level: medium
-      name: QR_data
-      pcb_negative: true
-    - correction_level: medium
-      name: QR_kibot
+    - correction_level: low
+      name: QR_ProjecData
+      text: '%p %r %c'
+      #pcb_negative: true
+      size_pcb: 6
+    - correction_level: low
+      name: QR_WebUrl
       text: https://github.com/HansAchterbahn/MateLightPowerSupplyPcb
+      size_pcb: 6
     use_sch_dir: false
 
 ################################################################################
@@ -662,8 +665,6 @@ outputs:
 #   comment: 3D model in STEP format
 #   type: step
 #   dir: kibot/3d
-#   options:
-#     download: true
 
 # # 3D Renderer
 # - name: basic_render_3d_top

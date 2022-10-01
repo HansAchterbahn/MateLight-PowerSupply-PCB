@@ -201,6 +201,10 @@ outputs:
 #     suffix: F_Fab
 #     description: Front documentation
 
+################################################################################
+# Production Data (Gerber / Drill / ...)
+################################################################################
+
 # Production Data - JLCPCB
 - name: JLCPCB_gerbers
   comment: Gerbers compatible with JLCPCB
@@ -421,6 +425,9 @@ outputs:
       dest: /
     move_files: true
 
+################################################################################
+# KiBot Stuff
+################################################################################
 
 # - name: basic_info
 #   comment: Information about the run
@@ -432,10 +439,12 @@ outputs:
 #   dir: Browse
 #   options:
 #     link_from_root: index.html
+
 # - name: classic_netlist
 #   comment: Schematic netlist in KiCad format
 #   type: netlist
 #   dir: Export
+
 # - name: ipc_netlist
 #   comment: IPC-D-356 netlist for testing
 #   type: netlist
@@ -494,7 +503,7 @@ outputs:
 # - name: basic_pcb_print_svg
 #   comment: PCB
 #   type: pcb_print
-#   dir: PCB/SVG
+#   dir: kibot/svg-export/
 #   options:
 #     format: SVG
 #     pages:
@@ -541,358 +550,48 @@ outputs:
 #       sheet: Front documentation
 #     keep_temporal_files: true
 #     add_background: true
-# - name: basic_pcb_print_png
-#   comment: PCB
-#   type: pcb_print
-#   dir: PCB/PNG
-#   options:
-#     format: PNG
-#     pages:
-#     - layers:
-#       - layer: F.Cu
-#       - layer: F.Mask
-#         color: '#14332440'
-#       - layer: F.Paste
-#       - layer: F.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front copper
-#     - layers:
-#       - layer: B.Cu
-#       - layer: B.Mask
-#         color: '#14332440'
-#       - layer: B.Paste
-#       - layer: B.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom copper
-#     - layers:
-#       - layer: B.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom courtyard area
-#     - layers:
-#       - layer: F.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front courtyard area
-#     - layers:
-#       - layer: B.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom documentation
-#     - layers:
-#       - layer: F.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front documentation
-#     keep_temporal_files: true
-#     add_background: true
-# - name: basic_pcb_print_eps
-#   comment: PCB
-#   type: pcb_print
-#   dir: PCB/EPS
-#   options:
-#     format: EPS
-#     pages:
-#     - layers:
-#       - layer: F.Cu
-#       - layer: F.Mask
-#         color: '#14332440'
-#       - layer: F.Paste
-#       - layer: F.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front copper
-#     - layers:
-#       - layer: B.Cu
-#       - layer: B.Mask
-#         color: '#14332440'
-#       - layer: B.Paste
-#       - layer: B.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom copper
-#     - layers:
-#       - layer: B.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom courtyard area
-#     - layers:
-#       - layer: F.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front courtyard area
-#     - layers:
-#       - layer: B.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom documentation
-#     - layers:
-#       - layer: F.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front documentation
-#     keep_temporal_files: true
-# - name: basic_pcb_print_ps
-#   comment: PCB
-#   type: pcb_print
-#   dir: PCB/PS
-#   options:
-#     format: PS
-#     pages:
-#     - layers:
-#       - layer: F.Cu
-#       - layer: F.Mask
-#         color: '#14332440'
-#       - layer: F.Paste
-#       - layer: F.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front copper
-#     - layers:
-#       - layer: B.Cu
-#       - layer: B.Mask
-#         color: '#14332440'
-#       - layer: B.Paste
-#       - layer: B.Silkscreen
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom copper
-#     - layers:
-#       - layer: B.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom courtyard area
-#     - layers:
-#       - layer: F.Courtyard
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front courtyard area
-#     - layers:
-#       - layer: B.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       mirror: true
-#       sheet: Bottom documentation
-#     - layers:
-#       - layer: F.Fab
-#       - layer: Edge.Cuts
-#       - layer: User.Comments
-#       sheet: Front documentation
-#     keep_temporal_files: true
-# - name: basic_pcbdraw_svg_jlcpcb_green_enig_top
-#   comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: svg
-# - name: basic_pcbdraw_png_jlcpcb_green_enig_top
-#   comment: PCB 2D render in PNG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: png
-# - name: basic_pcbdraw_jpg_jlcpcb_green_enig_top
-#   comment: PCB 2D render in JPG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: jpg
-# - name: basic_pcbdraw_svg_set_blue_enig_top
-#   comment: PCB 2D render in SVG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: svg
-# - name: basic_pcbdraw_png_set_blue_enig_top
-#   comment: PCB 2D render in PNG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: png
-# - name: basic_pcbdraw_jpg_set_blue_enig_top
-#   comment: PCB 2D render in JPG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: jpg
-# - name: basic_pcbdraw_svg_set_red_hasl_top
-#   comment: PCB 2D render in SVG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: svg
-# - name: basic_pcbdraw_png_set_red_hasl_top
-#   comment: PCB 2D render in PNG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: png
-# - name: basic_pcbdraw_jpg_set_red_hasl_top
-#   comment: PCB 2D render in JPG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: jpg
-# - name: basic_pcbdraw_svg_jlcpcb_green_enig_bottom
-#   comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: svg
-#     bottom: true
-# - name: basic_pcbdraw_png_jlcpcb_green_enig_bottom
-#   comment: PCB 2D render in PNG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: png
-#     bottom: true
-# - name: basic_pcbdraw_jpg_jlcpcb_green_enig_bottom
-#   comment: PCB 2D render in JPG format, using jlcpcb-green-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/jlcpcb_green_enig
-#   options:
-#     style: jlcpcb-green-enig
-#     format: jpg
-#     bottom: true
-# - name: basic_pcbdraw_svg_set_blue_enig_bottom
-#   comment: PCB 2D render in SVG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: svg
-#     bottom: true
-# - name: basic_pcbdraw_png_set_blue_enig_bottom
-#   comment: PCB 2D render in PNG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: png
-#     bottom: true
-# - name: basic_pcbdraw_jpg_set_blue_enig_bottom
-#   comment: PCB 2D render in JPG format, using set-blue-enig style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_blue_enig
-#   options:
-#     style: set-blue-enig
-#     format: jpg
-#     bottom: true
-# - name: basic_pcbdraw_svg_set_red_hasl_bottom
-#   comment: PCB 2D render in SVG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: svg
-#     bottom: true
-# - name: basic_pcbdraw_png_set_red_hasl_bottom
-#   comment: PCB 2D render in PNG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: png
-#     bottom: true
-# - name: basic_pcbdraw_jpg_set_red_hasl_bottom
-#   comment: PCB 2D render in JPG format, using set-red-hasl style
-#   type: pcbdraw
-#   dir: PCB/2D_render/set_red_hasl
-#   options:
-#     style: set-red-hasl
-#     format: jpg
-#     bottom: true
-# - name: basic_pdf
-#   comment: Individual layers in PDF format
-#   type: pdf
-#   dir: Individual_Layers/PDF
-#   layers:
-#   - layer: F.Cu
-#     suffix: F_Cu
-#     description: Front copper
-#   - layer: B.Cu
-#     suffix: B_Cu
-#     description: Bottom copper
-#   - layer: B.Paste
-#     suffix: B_Paste
-#     description: Bottom solder paste
-#   - layer: F.Paste
-#     suffix: F_Paste
-#     description: Front solder paste
-#   - layer: B.Silkscreen
-#     suffix: B_Silkscreen
-#     description: Bottom silkscreen (artwork)
-#   - layer: F.Silkscreen
-#     suffix: F_Silkscreen
-#     description: Front silkscreen (artwork)
-#   - layer: B.Mask
-#     suffix: B_Mask
-#     description: Bottom soldermask (negative)
-#   - layer: F.Mask
-#     suffix: F_Mask
-#     description: Front soldermask (negative)
-#   - layer: User.Comments
-#     suffix: User_Comments
-#     description: User comments
-#   - layer: Edge.Cuts
-#     suffix: Edge_Cuts
-#     description: Board shape
-#   - layer: B.Courtyard
-#     suffix: B_Courtyard
-#     description: Bottom courtyard area
-#   - layer: F.Courtyard
-#     suffix: F_Courtyard
-#     description: Front courtyard area
-#   - layer: B.Fab
-#     suffix: B_Fab
-#     description: Bottom documentation
-#   - layer: F.Fab
-#     suffix: F_Fab
-#     description: Front documentation
+
+
+################################################################################
+# Libraries
+################################################################################
+
+# Generate QR-Code
+- name: basic_qr_lib_example
+  comment: QR code symbol and footprint example
+  type: qr_lib
+  dir: kibot/qr_libs
+  options:
+    qrs:
+    - correction_level: medium
+      name: QR_data
+      pcb_negative: true
+    - correction_level: medium
+      name: QR_kibot
+      text: https://github.com/HansAchterbahn/MateLightPowerSupplyPcb
+    use_sch_dir: false
+
+################################################################################
+# Plots
+################################################################################
+
+# Schematic Plot (SVG)
+- name: basic_svg_sch_print
+  comment: Schematic in SVG format
+  type: svg_sch_print
+  dir: kibot/schematic
+
+# # Schematic Plot (PDF)
 # - name: basic_pdf_sch_print
 #   comment: Schematic in PDF format
 #   type: pdf_sch_print
-#   dir: Schematic
-# - name: basic_position_ASCII
-#   comment: Components position for Pick & Place
-#   type: position
-#   dir: Position
-#   options:
-#     format: ASCII
-#     only_smd: false
-# - name: basic_position_CSV
-#   comment: Components position for Pick & Place
-#   type: position
-#   dir: Position
-#   options:
-#     format: CSV
-#     only_smd: false
-# - name: basic_ps
-#   comment: Individual layers in PS format
-#   type: ps
-#   dir: Individual_Layers/PS
+#   dir: kibot/schematic
+
+# # Board Plot (SVG)
+# - name: basic_svg
+#   comment: Individual layers in SVG format
+#   type: svg
+#   dir: kibot/individual_Layers/SVG
 #   layers:
 #   - layer: F.Cu
 #     suffix: F_Cu
@@ -936,30 +635,48 @@ outputs:
 #   - layer: F.Fab
 #     suffix: F_Fab
 #     description: Front documentation
-# - name: basic_qr_lib_example
-#   comment: QR code symbol and footprint example
-#   type: qr_lib
-#   dir: QR_libs
+
+# PCB Draw (2D Board Renderer)
+- name: basic_pcbdraw_svg_jlcpcb_green_enig_top
+  comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: kibot/plot/
+  options:
+    style: jlcpcb-green-enig
+    format: svg
+- name: basic_pcbdraw_svg_jlcpcb_green_enig_bottom
+  comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: kibot/plot
+  options:
+    style: jlcpcb-green-enig
+    format: svg
+    bottom: true
+
+################################################################################
+# 3D Model
+################################################################################
+
+# # 3D STEP model creation
+# - name: basic_step
+#   comment: 3D model in STEP format
+#   type: step
+#   dir: kibot/3d
 #   options:
-#     qrs:
-#     - correction_level: medium
-#       name: QR_data
-#       pcb_negative: true
-#     - correction_level: medium
-#       name: QR_kibot
-#       text: https://github.com/INTI-CMNB/KiBot/
-#     use_sch_dir: false
+#     download: true
+
+# # 3D Renderer
 # - name: basic_render_3d_top
 #   comment: 3D view from top
 #   type: render_3d
-#   dir: 3D
+#   dir: kibot/3d
 #   options:
 #     ray_tracing: true
 #     orthographic: true
 # - name: basic_render_3d_30deg
 #   comment: 3D view from 30 degrees
 #   type: render_3d
-#   dir: 3D
+#   dir: kibot/3d
 #   output_id: 30deg
 #   options:
 #     ray_tracing: true
@@ -968,76 +685,31 @@ outputs:
 # - name: basic_render_3d_bottom
 #   comment: 3D view from bottom
 #   type: render_3d
-#   dir: 3D
+#   dir: kibot/3d
 #   options:
 #     ray_tracing: true
 #     orthographic: true
 #     view: bottom
+
+################################################################################
+# Reports
+################################################################################
+
+# # Design Report (Simple)
 # - name: report_simple
 #   comment: Simple design report
 #   type: report
+#   dir: kibot/report
 #   output_id: _simple
 #   options:
 #     template: simple_ASCII
 #     do_convert: true
-# - name: report_full
-#   comment: Full design report
-#   type: report
-#   options:
-#     template: full_SVG
-#     do_convert: true
-# - name: basic_step
-#   comment: 3D model in STEP format
-#   type: step
-#   dir: 3D
-# - name: basic_svg
-#   comment: Individual layers in SVG format
-#   type: svg
-#   dir: Individual_Layers/SVG
-#   layers:
-#   - layer: F.Cu
-#     suffix: F_Cu
-#     description: Front copper
-#   - layer: B.Cu
-#     suffix: B_Cu
-#     description: Bottom copper
-#   - layer: B.Paste
-#     suffix: B_Paste
-#     description: Bottom solder paste
-#   - layer: F.Paste
-#     suffix: F_Paste
-#     description: Front solder paste
-#   - layer: B.Silkscreen
-#     suffix: B_Silkscreen
-#     description: Bottom silkscreen (artwork)
-#   - layer: F.Silkscreen
-#     suffix: F_Silkscreen
-#     description: Front silkscreen (artwork)
-#   - layer: B.Mask
-#     suffix: B_Mask
-#     description: Bottom soldermask (negative)
-#   - layer: F.Mask
-#     suffix: F_Mask
-#     description: Front soldermask (negative)
-#   - layer: User.Comments
-#     suffix: User_Comments
-#     description: User comments
-#   - layer: Edge.Cuts
-#     suffix: Edge_Cuts
-#     description: Board shape
-#   - layer: B.Courtyard
-#     suffix: B_Courtyard
-#     description: Bottom courtyard area
-#   - layer: F.Courtyard
-#     suffix: F_Courtyard
-#     description: Front courtyard area
-#   - layer: B.Fab
-#     suffix: B_Fab
-#     description: Bottom documentation
-#   - layer: F.Fab
-#     suffix: F_Fab
-#     description: Front documentation
-# - name: basic_svg_sch_print
-#   comment: Schematic in SVG format
-#   type: svg_sch_print
-#   dir: Schematic
+
+# Design Report (full_SVG)
+- name: report_full
+  comment: Full design report
+  dir: kibot/report
+  type: report
+  options:
+    template: full_SVG
+    do_convert: true

@@ -3,25 +3,25 @@
 kibot:
   version: 1
 
-# preflight:
-#   # [boolean=false] Zones are filled before doing any operation involving PCB layers
-#   check_zone_fills: true
-#   # [boolean=false] Option for `run_drc`. Ignores the unconnected nets. Useful if you didn't finish the routing
-#   ignore_unconnected: false
-#   # [boolean=false] Runs the DRC (Distance Rules Check). To ensure we have a valid PCB
-#   run_drc: false
-#   # [boolean=false] Runs the ERC (Electrical Rules Check). To ensure the schematic is electrically correct
-#   run_erc: false
-#   # [boolean=false] Update the XML version of the BoM (Bill of Materials).
-#        # To ensure our generated BoM is up to date.
-#        # Note that this isn't needed when using the internal BoM generator (`bom`)
-#   update_xml: false
+preflight:
+  # [boolean=false] Zones are filled before doing any operation involving PCB layers
+  check_zone_fills: true
+  # [boolean=false] Option for `run_drc`. Ignores the unconnected nets. Useful if you didn't finish the routing
+  ignore_unconnected: false
+  # [boolean=false] Runs the DRC (Distance Rules Check). To ensure we have a valid PCB
+  run_drc: false
+  # [boolean=false] Runs the ERC (Electrical Rules Check). To ensure the schematic is electrically correct
+  run_erc: false
+  # [boolean=false] Update the XML version of the BoM (Bill of Materials).
+       # To ensure our generated BoM is up to date.
+       # Note that this isn't needed when using the internal BoM generator (`bom`)
+  update_xml: false
 
-# global:
-#   filters:
-#   - number: 1007
-#   - number: 1015
-#   - number: 58
+global:
+  filters:
+  - number: 1007
+  - number: 1015
+  - number: 58
 
 filters:
 - name: only_jlc_parts
@@ -575,11 +575,11 @@ outputs:
 # Plots
 ################################################################################
 
-# Schematic Plot (SVG)
-- name: basic_svg_sch_print
-  comment: Schematic in SVG format
-  type: svg_sch_print
-  dir: kibot/schematic
+# # Schematic Plot (SVG)
+# - name: basic_svg_sch_print
+#   comment: Schematic in SVG format
+#   type: svg_sch_print
+#   dir: kibot/schematic
 
 # # Schematic Plot (PDF)
 # - name: basic_pdf_sch_print

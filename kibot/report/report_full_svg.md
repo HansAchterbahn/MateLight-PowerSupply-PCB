@@ -78,5 +78,15 @@ Drill tools (including vias and computing adjusts and rounding):
 - 3.2 mm (126 mils) (3)
 
 
+# Schematic
 
+![Schematic in SVG format](../doc/schematic.svg){ width=16.5cm height=11.7cm }
+
+
+
+# PCB Layers
+
+![PCB Front copper](../pcb/board-assembly_page_01-_n.svg){ width=16.5cm height=11.7cm }
+
+![PCB Bottom copper](../pcb/board-assembly_page_02-_n.svg){ width=16.5cm height=11.7cm }
 

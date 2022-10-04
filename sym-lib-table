@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "MateLightPowerSupplyPcb-qr")(type "KiCad")(uri "${KICAD_PROJECTS}/Projekte/Privat/MateLightPowerSupplyPcb/kibot/qr_libs/MateLightPowerSupplyPcb-qr.kicad_sym")(options "")(descr ""))
+)
